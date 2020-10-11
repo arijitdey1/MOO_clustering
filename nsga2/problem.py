@@ -20,7 +20,7 @@ class Problem:
         exit()
 
     def generate_individual(self):
-        xy = FCM(self.all_data_matrix,self.individual_no)
+        xy = CLUSTERING(self.all_data_matrix,self.individual_no)
         center, u, d ,fpc, no_of_cluster, label = xy.FuzzyCMeans()             #Generate each individual using Fuzzy C means
         individual = Individual()
         individual.partition_matrix = u
