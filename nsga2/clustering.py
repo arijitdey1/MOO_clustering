@@ -1,7 +1,9 @@
 import numpy as np
-import os
+import os, math
 import skfuzzy as fuzz
 import random
+from sklearn.cluster import KMeans
+
 
 i = 0 ;
 class CLUSTERING(object):
@@ -22,3 +24,10 @@ class CLUSTERING(object):
 
 
         #print individual.features
+    def kmeans(self):
+        number_of_clusters = random.randint(2,int(math.sqrt(self.individual_no)))
+        kmeans = KMeans(n_clusters=number_of_clusters)
+        kmeans.fit(self.all_data_matrix)
+        centroids = kmeans.cluster_centers_
+        label = kmeans.labels_
+        return centroids, label, number_of_clusters

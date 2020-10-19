@@ -29,8 +29,6 @@ def preprocess(dataset_path):
     print (individual_length)
     
 
-
-
     #print individual_ref_id_list
     #print len(individual_ref_id_list) , len(individual_id_list1)
     return individual_length, individual_list
